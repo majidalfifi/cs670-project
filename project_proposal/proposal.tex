@@ -29,7 +29,7 @@
  
 \title{CS670 Project Proposal\\Online Lockstep Behavior Detection}
 \author{
-Team Name: \textbf{Detectors}\\[2ex]
+Team Name: \textbf{End of Fraud}\\[2ex]
 \small{Team Members (alphabetically ordered):}\\
 Majid Alfifi, Parisa Kaghazgaran,  Xing Zhao
 }
@@ -49,19 +49,23 @@ Majid Alfifi, Parisa Kaghazgaran,  Xing Zhao
 % An article style is separated into sections and subsections with 
 %   markup such as this.  Use \section*{Principles} for unnumbered sections.
 
-How can we detect if a politician has purchased fake followers on Twitter or if a product's reviews on Amazon are genuine?
+How can we detect if a politician has purchased fake followers on Twitter or if a product's reviews on Amazon are not genuine?
 
 A common method has been to represent \emph{users} and \emph{items} as a matrix where in the simplest case a cell can take on a binary value of 1 if there is a relationship between the corresponding user and item or 0 otherwise. The problem can then be transformed to finding dense regions in this matrix [1]. Moreover, this method has been lately extended from matrix to tensor representation to incorporate more dimensions from the domain such as timestamp, Twitter followers count, or number of stars of an Amazon product along with a scalable MapReduce-based implementation \textbf{D-Cube} [2]. Extraordinary dense blocks in the tensor correspond to groups of users with lockstep behaviors both in the products they review and along the additional dimensions (for example, multiple users reviewing the same products at the exact same time). 
 
 
 \section{Project Goals}
 
-We intend to use an existing MapReduce-based implementation of the D-Cube algorithm\footnote{\href{https://github.com/kijungs/dcube}{https://github.com/kijungs/dcube}} to our own datasets and explore the effectiveness of different dimensions in detecting fraudulent behavior hopefully informing our own research. In particular we will apply the algorithm to the following datasets:
+We intend to use an existing MapReduce-based implementation of the D-Cube algorithm\footnote{\href{https://github.com/kijungs/dcube}{https://github.com/kijungs/dcube}} (Section 3.3) to our own datasets and explore the effectiveness of different dimensions in detecting fraudulent behavior hopefully informing our own research. In particular we will apply the algorithm to the following datasets:
 \begin{itemize}
 \item Twitter dataset: Can we identify tweets promoting/undermining certain hashtags? How do those suspicious tweets temporally differ from ordinary tweets (timestamp dimension)? etc. 
-\item Amazon Reviews: ...
-\item ...
+\item Amazon dataset: Can we find the hidden relation among reviewers in Amazon who aim to promote a product by writing fake reviews using  additional dimensions such as temporal, rating and so on.  
+\item Yelp dataset: ...
 \end{itemize}
+
+Feature engineering: We will extract set of dimensions useful in detecting the lockstep behavior for each of the datasets.	
+
+The paper [2] defines several density measures appropriate for anomaly detection (Section 2.2). We aim to build on those functions and propose a flexible density measure which gives different weights to different features (e.g., In Amazon temporal features are more informative than rating).  
  
 \section{Tools/Resources}
 We will make use of the following resources:
@@ -75,8 +79,10 @@ We will make use of the following resources:
 \section{Project Outcome}
 
 \begin{itemize}
-	\item A set of users/items potentially participating in a lockstep behavior for each of the datasets under study
-	\item Feature engineering: dimensions useful in detecting the lockstep behavior for each of the datasets.
+	
+	\item A set of users/items potentially participating in a lockstep behavior for each of the datasets under study.
+	\item Evaluation of different dimensions. 
+	\item Evaluation of different density measures.
 \end{itemize}
 
   
