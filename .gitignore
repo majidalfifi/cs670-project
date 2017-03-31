@@ -1,0 +1,6 @@
+*.pdf
+*.synctex.gz
+.texpadtmp/*
+*.out
+*.aux
+*.log
