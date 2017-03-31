@@ -1,0 +1,92 @@
+\documentclass[12pt]{article}
+ 
+% Any percent sign marks a comment to the end of the line
+ 
+% Every latex document starts with a documentclass declaration like this
+% The option dvips allows for graphics, 12pt is the font size, and article
+%   is the style
+ 
+\usepackage[pdftex]{graphicx}
+\usepackage{url}
+\usepackage{hyperref}
+
+% These are additional packages for "pdflatex", graphics, and to include
+% hyperlinks inside a document.
+ 
+\setlength{\oddsidemargin}{0.25in}
+\setlength{\textwidth}{6.5in}
+\setlength{\topmargin}{-1.2in}
+\setlength{\textheight}{8.5in}
+ 
+% These force using more of the margins that is the default style
+ 
+\usepackage{multicol}
+ 
+\begin{document}
+ 
+% Everything after this becomes content
+% Replace the text between curly brackets with your own
+ 
+\title{CS670 Project Proposal\\Online Lockstep Behavior Detection}
+\author{
+Team Name: \textbf{Detectors}\\[2ex]
+\small{Team Members (alphabetically ordered):}\\
+Majid Alfifi, Parisa Kaghazgaran,  Xing Zhao
+}
+
+\date{\today}
+ 
+% You can leave out "date" and it will be added automatically for today
+% You can change the "\today" date to any text you like
+ 
+ 
+\maketitle
+ 
+% This command causes the title to be created in the document
+ 
+\section{Introduction}
+ 
+% An article style is separated into sections and subsections with 
+%   markup such as this.  Use \section*{Principles} for unnumbered sections.
+
+How can we detect if a politician has purchased fake followers on Twitter or if a product's reviews on Amazon are genuine?
+
+A common method has been to represent \emph{users} and \emph{items} as a matrix where in the simplest case a cell can take on a binary value of 1 if there is a relationship between the corresponding user and item or 0 otherwise. The problem can then be transformed to finding dense regions in this matrix [1]. Moreover, this method has been lately extended from matrix to tensor representation to incorporate more dimensions from the domain such as timestamp, Twitter followers count, or number of stars of an Amazon product along with a scalable MapReduce-based implementation \textbf{D-Cube} [2]. Extraordinary dense blocks in the tensor correspond to groups of users with lockstep behaviors both in the products they review and along the additional dimensions (for example, multiple users reviewing the same products at the exact same time). 
+
+\section{Project Goals}
+
+We intend to use an existing MapReduce-based implementation of the D-Cube algorithm\footnote{\href{https://github.com/kijungs/dcube}{https://github.com/kijungs/dcube}} to our own datasets and explore the effectiveness of different dimensions in detecting fraudulent behavior hopefully informing our own research. In particular we will apply the algorithm to the following datasets:
+\begin{itemize}
+\item Twitter dataset: Can we identify tweets promoting/undermining certain hashtags? How do those suspicious tweets temporally differ from ordinary tweets (timestamp dimension)? etc. 
+\item Amazon Reviews: ...
+\item ...
+\end{itemize}
+ 
+\section{Tools/Resources}
+We will make use of the following resources:
+\begin{itemize}
+	\item A local Hadoop cluster for running the algorithm
+	\item Large dataset of Twitter data
+	\item Amazon reviews
+	\item Yelp dataset?
+\end{itemize}
+
+\section{Project Outcome}
+
+\begin{itemize}
+	\item A set of users/items potentially participating in a lockstep behavior for each of the datasets under study
+	\item Feature engineering: dimensions useful in detecting the lockstep behavior for each of the datasets.
+\end{itemize}
+
+  
+\begin{thebibliography}{99}
+ 
+
+\bibitem{hooi2016fraudar} Hooi, Bryan, et al. ``Fraudar: Bounding graph fraud in the face of camouflage.'' Proceedings of the 22nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining. ACM, 2016.
+
+\bibitem{shin2017d} Shin, Kijung, et al. ``D-cube: Dense-block detection in terabyte-scale tensors.'' Proceedings of the Tenth ACM International Conference on Web Search and Data Mining. ACM, 2017.
+
+\end{thebibliography}
+
+
+\end{document}
