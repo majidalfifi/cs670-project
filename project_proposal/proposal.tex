@@ -53,7 +53,7 @@ How can we detect if a politician has purchased fake followers on Twitter or if 
 
 A common method has been to represent \emph{users} and \emph{items} as a matrix where in the simplest case a cell can take on a binary value of 1 if there is a relationship between the corresponding user and item or 0 otherwise. The problem can then be transformed to finding dense regions in this matrix [1]. Moreover, this method has been lately extended from matrix to tensor representation to incorporate more dimensions from the domain such as timestamp, Twitter followers count, or number of stars of an Amazon product along with a scalable MapReduce-based implementation \textbf{D-Cube} [2]. Extraordinary dense blocks in the tensor correspond to groups of users with lockstep behaviors both in the products they review and along the additional dimensions (for example, multiple users reviewing the same products at the exact same time). 
 
-Heloo Henrry jh 
+
 \section{Project Goals}
 
 We intend to use an existing MapReduce-based implementation of the D-Cube algorithm\footnote{\href{https://github.com/kijungs/dcube}{https://github.com/kijungs/dcube}} to our own datasets and explore the effectiveness of different dimensions in detecting fraudulent behavior hopefully informing our own research. In particular we will apply the algorithm to the following datasets:
