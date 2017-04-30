@@ -19,6 +19,7 @@ import java.io.*;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
+import java.util.zip.GZIPInputStream;
 
 /**
  * D-Cube Implementation
@@ -164,8 +165,13 @@ public class Proposed {
 
         long omega = 0; // number of observable entries
         final int[] maxAttVals = new int[dimension];
-
-        final BufferedReader br = new BufferedReader(new FileReader(path));
+        final BufferedReader br;
+        if(path.endsWith("gz")) {
+            br = new BufferedReader(new InputStreamReader(
+                    new GZIPInputStream(new FileInputStream(path))));
+        } else {
+            br = new BufferedReader(new FileReader(path));
+        }
         while(true){
             final String line = br.readLine();
             if(line==null)

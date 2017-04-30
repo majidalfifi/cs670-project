@@ -16,6 +16,7 @@
 package dcube;
 
 import java.io.*;
+import java.util.zip.GZIPInputStream;
 
 /**
  * Methods for handling tensors
@@ -31,7 +32,13 @@ public class TensorMethods {
         final int[][] attVals = new int[dimension][bufferSize];
         final int[] values = new int[bufferSize];
 
-        final BufferedReader br = new BufferedReader(new FileReader(path));
+        final BufferedReader br;
+        if(path.endsWith("gz")) {
+            br = new BufferedReader(new InputStreamReader(
+                    new GZIPInputStream(new FileInputStream(path))));
+        } else {
+            br = new BufferedReader(new FileReader(path));
+        }
         long sum = 0;
         long omega = 0;
         for(int i=0; i<bufferSize; i++) {
