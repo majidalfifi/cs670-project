@@ -2,7 +2,7 @@
 
 Amazon Dataset:
 
-http://students.cse.tamu.edu/kaghazgaran/Dataset/AmazonDataset.zip
+http://students.cse.tamu.edu/kaghazgaran/Dataset/AmazonDataset.zip [249 MB]
 
 Twitter Dataset:
 
