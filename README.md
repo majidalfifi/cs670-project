@@ -11,8 +11,8 @@ D-Cube: Dense-Block Detection in Terabyte-Scale Tensors
 
 Our contributions:
 =======================
-0. Spark implementation
-0. Evaluation of the algorithm on real data from Twitter, Amazon, and Yelp.
+1. Spark implementation
+2. Evaluation of the algorithm on real data from Twitter, Amazon, and Yelp.
 
 Building and Running D-Cube
 ========================
