@@ -1,13 +1,12 @@
 D-Cube: Dense-Block Detection in Terabyte-Scale Tensors
 ========================
-**Authors**: Kijung Shin, Bryan Hooi, Jisu Kim, and Christos Faloutsos
-**Original Repo**: https://github.com/kijungs/dcube
+**Authors**: Kijung Shin, Bryan Hooi, Jisu Kim, and Christos Faloutsos   
 **D-Cube (Disk-based Dense-block Detection)** is an algorithm for detecting dense subtensors in tensors.
 **D-Cube** has the following properties:
  * *scalable*: **D-Cube** handles large data not fitting in memory or even on a disk.
  * *fast*: Even when data fit in memory, **D-Cube** outperforms its competitors in terms of speed.
- * *accurate*: **D-Cube** gives high accuracy in real-world data as well as theoretical accuracy guarantees.
-
+ * *accurate*: **D-Cube** gives high accuracy in real-world data as well as theoretical accuracy guarantees.  
+**Original Repo**: https://github.com/kijungs/dcube 
 Our contributions:
 =======================
 0. Spark implementation
