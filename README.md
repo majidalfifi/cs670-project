@@ -6,7 +6,8 @@ D-Cube: Dense-Block Detection in Terabyte-Scale Tensors
  * *scalable*: **D-Cube** handles large data not fitting in memory or even on a disk.
  * *fast*: Even when data fit in memory, **D-Cube** outperforms its competitors in terms of speed.
  * *accurate*: **D-Cube** gives high accuracy in real-world data as well as theoretical accuracy guarantees.  
-**Original Repo**: https://github.com/kijungs/dcube 
+**Original Repo**: https://github.com/kijungs/dcube
+
 Our contributions:
 =======================
 0. Spark implementation
