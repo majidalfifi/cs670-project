@@ -1,3 +1,6 @@
+Project Video: https://youtu.be/lZrjk-BBQ2k
+
+
 D-Cube: Dense-Block Detection in Terabyte-Scale Tensors
 ========================
 **Authors**: Kijung Shin, Bryan Hooi, Jisu Kim, and Christos Faloutsos   
